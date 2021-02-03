@@ -36,35 +36,16 @@ setTimeout(() => {
  * it exists in the scheduler.
  */
 
-addTask({
-  name: "task1",
-  intervalMS: 1000,
-  immediate: false,
-  func: () => console.log("task 1"),
-});
+addTask("task1", 1000, false, () => console.log("task 1"));
 
-addTask({
-  name: "task 2",
-  intervalMS: 1500,
-  immediate: false,
-  func: () => console.log("task 2"),
-});
-addTask({
-  name: "Check Task4",
-  intervalMS: 1000,
-  immediate: false,
-  func: () => {
-    console.log("Check if Task4 Exists", checkTaskExists("task 4"));
-  },
+addTask("task 2", 1500, false, () => console.log("task 2"));
+
+addTask("Check Task4", 1000, false, () => {
+  console.log("Check if Task4 Exists", checkTaskExists("task 4"));
 });
 setTimeout(() => {
-  addTask({
-    name: "task 4",
-    intervalMS: 3000,
-    immediate: false,
-    func: () => {
-      console.log("task 4");
-    },
+  addTask("task 4", 3000, false, () => {
+    console.log("task 4");
   });
 }, 5000);
 

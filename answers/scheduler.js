@@ -1,3 +1,4 @@
+"use strict";
 /*
 5- create a javascript module named "scheduler.js" that exposes 3 functions,
     this module should be used to schedule the execution of a specific function to be repeated every X amount of milliseconds
@@ -16,7 +17,7 @@
 //Please run 5.js
 
 let scheduler = [];
-const addTask = ({ name, intervalMS, immediate, func }) => {
+const addTask = (name, intervalMS, immediate, func) => {
   const task = { name, intervalMS, immediate, func };
   if (immediate) {
     func();
